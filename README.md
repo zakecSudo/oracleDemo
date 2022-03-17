@@ -1,6 +1,6 @@
 ## Demo project showing connection and interaction with Oracle-DB using spring-boot
 
-###Database credentials (used on dev db)
+### Database credentials (used on dev db)
 Host: `saimiri.local`
 
 Port: `1521`
