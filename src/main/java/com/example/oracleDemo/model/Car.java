@@ -1,21 +1,24 @@
 package com.example.oracleDemo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "cars")
 public class Car {
 
     @Id
-    public String brand;
-    public String model;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    private String brand;
+
+    private String model;
 
     public Car() {
     }
 
-    public Car(String brand, String model) {
+    public Car(long id, String brand, String model) {
+        this.id = id;
         this.brand = brand;
         this.model = model;
     }
@@ -34,5 +37,13 @@ public class Car {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
